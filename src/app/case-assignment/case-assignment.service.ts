@@ -17,4 +17,13 @@ export class CaseAssignmentService {
             .then(res => { return Promise.resolve(JSON.parse(res))})
             .catch(err => { return Promise.reject(err)});
     }
+
+    // to get the list of images which matches the user list
+    searchImages(per_page: Number, page: Number, searchText: string): Promise<any> {
+        // tslint:disable-next-line
+        const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=b92a39ddacaa1916cd1bde54db89e17a&text=${searchText}&per_page=${per_page}&page=${page}&format=json&nojsoncallback=1`;
+        return this.apiService.get(url)
+            .then(res => { return Promise.resolve(JSON.parse(res))})
+            .catch(err => { return Promise.reject(err)});
+    }
 }

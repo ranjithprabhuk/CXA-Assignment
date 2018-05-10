@@ -8,6 +8,7 @@ import { CsvService } from '../../../shared/service/csv.service';
 })
 export class SpotifyComponent implements OnInit {
     public imageList: any[] = [];
+    public searchText: String = '';
     public imagePerApiCall: Number = 30;
     public pageNo: any = 1;
 
@@ -51,6 +52,23 @@ export class SpotifyComponent implements OnInit {
     // export the json data as csv
     public exportToCsv(): void {
         this._csvService.download(this.imageList, 'imageData');
+    }
+
+    // search flickr images based on user input
+    public searchImages(searchText: string): void {
+        this.resetValues();
+        this._caseAssignmentService.searchImages(this.imagePerApiCall, this.pageNo, searchText).then((response) => {
+            if (response && response.photos) {
+                const { photo } = response.photos;
+                this.imageList = photo && photo.length > 0 ? photo : [];
+            }
+        })
+    }
+
+    // reset the values
+    public resetValues(): void {
+        this.pageNo = 0;
+        this.imageList = [];
     }
 
     // on component initial loading

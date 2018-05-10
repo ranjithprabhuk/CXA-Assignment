@@ -14,7 +14,15 @@
       <div class="form-group row justify-content-center">
         <div class="col-md-8">
           <div class="input-group">
-            <input type="email" id="search" name="search" class="form-control" placeholder="Search any image">
+            <input
+              type="email"
+              id="search"
+              [(ngModel)]="searchText"
+              (ngModelChange)="searchImages(value)"
+              name="search"
+              class="form-control"
+              placeholder="Search any image"
+            >
             <span class="input-group-btn">
               <button type="button" class="btn btn-primary">
                 <span class="fa fa-search"></span>Search
