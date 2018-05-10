@@ -17,7 +17,7 @@ export class SpotifyComponent implements OnInit {
         this._caseAssignmentService.getRecentImages(this.imagePerApiCall, this.pageNo).then((response) => {
             if (response && response.photos) {
                 const { photo } = response.photos;
-                this.imageList = photo && photo.length > 0 ? photo : [];
+                // this.imageList = photo && photo.length > 0 ? photo : [];
             }
         })
     }
