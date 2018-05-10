@@ -16,66 +16,21 @@
     </div>
   </div>
   <div class="result-container">
-    <div class="row">
-      <div class="col-md-3">
+    <div class="row" *ngIf="imageList">
+      <div class="col-md-3" *ngFor="let image of imageList">
         <div class="card">
           <div class="card-body">
-            <img src="http://farm5.static.flickr.com/4334/36294947613_0dc2bf9423_m.jpg" />
+            <img [src]="constructImageSource(image)" />
           </div>
           <div class="card-header">
-            Image title
+            {{(image.title.length > 10)? (image.title | slice:0:6) + '...' : (image.title)}}
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="http://farm5.static.flickr.com/4334/36294947613_0dc2bf9423_m.jpg" />
-          </div>
-          <div class="card-header">
-            Image title
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="http://farm5.static.flickr.com/4334/36294947613_0dc2bf9423_m.jpg" />
-          </div>
-          <div class="card-header">
-            Image title
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="http://farm5.static.flickr.com/4334/36294947613_0dc2bf9423_m.jpg" />
-          </div>
-          <div class="card-header">
-            Image title
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="http://farm5.static.flickr.com/4334/36294947613_0dc2bf9423_m.jpg" />
-          </div>
-          <div class="card-header">
-            Image title
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="http://farm5.static.flickr.com/4334/36294947613_0dc2bf9423_m.jpg" />
-          </div>
-          <div class="card-header">
-            Image title
-          </div>
-        </div>
+    </div>
+    <div class="row justify-content-center" *ngIf="!imageList">
+      <div class="btn btn-info btn-lg">
+        No Images are Found
       </div>
     </div>
   </div>

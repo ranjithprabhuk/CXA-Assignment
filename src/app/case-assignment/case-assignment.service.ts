@@ -9,11 +9,12 @@ export class CaseAssignmentService {
 
     constructor(private apiService: ApiService) { }
 
-    // to get the Data from the static json file
-    getCategories(parameter?: any): Promise<any> {
-        const params: URLSearchParams = new URLSearchParams();
-        return this.apiService.get(this.apiEndPoint + 'products.json')
-            .then(res => { return Promise.resolve(res)})
+    // to get the list of recent images from the flickr api
+    getRecentImages(parameter?: any): Promise<any> {
+        // tslint:disable-next-line
+        const url = 'https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=b92a39ddacaa1916cd1bde54db89e17a&extras=media&per_page=500&page=2&format=json&nojsoncallback=1';
+        return this.apiService.get(url)
+            .then(res => { return Promise.resolve(JSON.parse(res))})
             .catch(err => { return Promise.reject(err)});
     }
 }
