@@ -9,6 +9,18 @@ export class LayoutComponent {
 
   public disabled = false;
   public status: {isopen: boolean} = {isopen: false};
+  public navigationContent: any[] = [
+    {
+      title: 'Spotify',
+      url: '[/case-assignment/spotify]',
+      icon: 'search'
+    },
+    {
+      title: 'Carousel',
+      url: '[/case-assignment/carousel]',
+      icon: 'image'
+    }
+  ];
 
   public toggled(open: boolean): void {
     console.log('Dropdown is now: ', open);

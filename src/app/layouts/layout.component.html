@@ -13,14 +13,14 @@
   <div class="sidebar">
     <nav class="sidebar-nav">
       <ul class="nav">
-        <li class="nav-item">
+        <li class="nav-item" *ngFor="let navigation of navigationContent">
           <a
             class="nav-link"
             routerLinkActive="active"
-            [routerLink]="['/case-assignment']"
+            [routerLink]="navigation.url"
           >
-          <i class="fa fa-search"></i>
-          Spotify
+          <i class="fa fa-{{navigation.icon}}"></i>
+          {{navigation.title}}
         </a>
         </li>
       </ul>
