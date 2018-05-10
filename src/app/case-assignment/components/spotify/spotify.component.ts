@@ -7,16 +7,17 @@ import { CaseAssignmentService } from '../../case-assignment.service';
 })
 export class SpotifyComponent implements OnInit {
     public imageList: any[] = [];
+    public imagePerApiCall: Number = 30;
+    public pageNo: any = 1;
 
     constructor(private _caseAssignmentService: CaseAssignmentService) { }
 
     // get the list of images to load
     public getImageList(): void {
-        this._caseAssignmentService.getRecentImages().then((response) => {
+        this._caseAssignmentService.getRecentImages(this.imagePerApiCall, this.pageNo).then((response) => {
             if (response && response.photos) {
                 const { photo } = response.photos;
                 this.imageList = photo && photo.length > 0 ? photo : [];
-                console.log('photodd', this.imageList, photo)
             }
         })
     }
@@ -24,7 +25,23 @@ export class SpotifyComponent implements OnInit {
     // create the image url
     constructImageSource(image: any): String {
         const { id, server, farm, secret } = image;
-        return `http://farm${farm}.static.flickr.com/${server}/${id}_${secret}_m.jpg'`;
+        let url: String = '';
+
+        if (id && server && farm && secret) {
+            url = `http://farm${farm}.static.flickr.com/${server}/${id}_${secret}_m.jpg'`;
+        }
+        return url
+    }
+
+    // on image container scroll call the api to get more images
+    public onImageContainerScroll(): void {
+        this._caseAssignmentService.getRecentImages(this.imagePerApiCall, ++this.pageNo).then((response) => {
+            if (response && response.photos) {
+                const { photo } = response.photos;
+                const imageList = photo && photo.length > 0 ? photo : [];
+                this.imageList.push(...imageList);
+            }
+        })
     }
 
     ngOnInit() {

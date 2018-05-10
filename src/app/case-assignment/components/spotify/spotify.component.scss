@@ -1,5 +1,4 @@
 .result-container{
-    height: 60vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    max-height: 60vh;
+    overflow: auto;
 }
