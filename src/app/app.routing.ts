@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-// Layouts
-import { FullLayoutComponent } from './layouts/full-layout.component';
+import { LayoutComponent } from './layouts';
 
 export const routes: Routes = [
   {
@@ -12,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: FullLayoutComponent,
+    component: LayoutComponent,
     data: {
       title: 'Home'
     },

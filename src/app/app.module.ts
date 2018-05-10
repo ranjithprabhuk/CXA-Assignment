@@ -22,7 +22,7 @@ import { AppRoutingModule } from './app.routing';
 import { ApiService } from './app.service';
 
 // Components
-import { FullLayoutComponent } from './layouts/full-layout.component';
+import { LayoutComponent } from './layouts';
 import { LoaderComponent, LoaderService } from './shared/loader';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { LoaderComponent, LoaderService } from './shared/loader';
   ],
   declarations: [
     AppComponent,
-    FullLayoutComponent,
+    LayoutComponent,
     LoaderComponent,
     NAV_DROPDOWN_DIRECTIVES,
     BreadcrumbsComponent,
