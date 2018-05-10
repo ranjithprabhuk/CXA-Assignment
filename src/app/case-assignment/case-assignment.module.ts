@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CaseAssignmentRoutingModule } from './case-assignment-routing.module';
+import { CaseAssignmentService } from './case-assignment.service';
 import { SpotifyComponent } from './components/spotify';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { SpotifyComponent } from './components/spotify';
     FormsModule,
     CommonModule,
   ],
-  declarations: [ SpotifyComponent ]
+  declarations: [SpotifyComponent],
+  providers: [CaseAssignmentService]
 })
 export class CaseAssignmentModule { }

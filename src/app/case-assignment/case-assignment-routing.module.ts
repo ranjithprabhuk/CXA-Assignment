@@ -5,6 +5,10 @@ import { SpotifyComponent } from './components/spotify';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'spotify'
+  },
+  {
+    path: 'spotify',
     component: SpotifyComponent,
     data: {
       title: 'Spotify'

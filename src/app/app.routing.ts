@@ -12,7 +12,7 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Assignments'
     },
     children: [
       {
@@ -20,11 +20,7 @@ export const routes: Routes = [
         loadChildren: './case-assignment/case-assignment.module#CaseAssignmentModule'
       }
     ]
-  },
-  {
-    path: '**',
-    redirectTo: 'case-assignment',
-  },
+  }
 ];
 
 @NgModule({
