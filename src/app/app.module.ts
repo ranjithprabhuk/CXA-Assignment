@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ToastrModule } from 'ngx-toastr';
+import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NAV_DROPDOWN_DIRECTIVES } from './shared/nav-dropdown.directive';
 
@@ -34,7 +35,8 @@ import { LoaderComponent, LoaderService } from './shared/loader';
     TabsModule.forRoot(),
     ToastrModule.forRoot(),
     ChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LazyLoadImagesModule
   ],
   declarations: [
     AppComponent,
