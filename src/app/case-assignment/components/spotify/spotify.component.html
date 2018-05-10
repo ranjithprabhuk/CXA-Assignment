@@ -18,13 +18,13 @@
               type="email"
               id="search"
               [(ngModel)]="searchText"
-              (ngModelChange)="searchImages(value)"
+              (change)="searchImages()"
               name="search"
               class="form-control"
               placeholder="Search any image"
             >
             <span class="input-group-btn">
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-primary" (click)="searchImages()">
                 <span class="fa fa-search"></span>Search
               </button>
             </span>

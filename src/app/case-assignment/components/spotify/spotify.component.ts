@@ -55,9 +55,9 @@ export class SpotifyComponent implements OnInit {
     }
 
     // search flickr images based on user input
-    public searchImages(searchText: string): void {
+    public searchImages(): void {
         this.resetValues();
-        this._caseAssignmentService.searchImages(this.imagePerApiCall, this.pageNo, searchText).then((response) => {
+        this._caseAssignmentService.searchImages(this.imagePerApiCall, this.pageNo, this.searchText).then((response) => {
             if (response && response.photos) {
                 const { photo } = response.photos;
                 this.imageList = photo && photo.length > 0 ? photo : [];
