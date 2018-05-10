@@ -6,6 +6,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CaseAssignmentRoutingModule } from './case-assignment-routing.module';
 import { CaseAssignmentService } from './case-assignment.service';
 import { SpotifyComponent } from './components/spotify';
+import { CarouselComponent } from './components/carousel';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { SpotifyComponent } from './components/spotify';
     LazyLoadImagesModule,
     InfiniteScrollModule
   ],
-  declarations: [SpotifyComponent],
+  declarations: [SpotifyComponent, CarouselComponent],
   providers: [CaseAssignmentService]
 })
 export class CaseAssignmentModule { }

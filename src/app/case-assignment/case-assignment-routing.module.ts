@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SpotifyComponent } from './components/spotify';
+import { CarouselComponent } from './components/carousel';
 
 const routes: Routes = [
   {
@@ -13,7 +14,14 @@ const routes: Routes = [
     data: {
       title: 'Spotify'
     }
-  }
+  },
+  {
+    path: 'carousel',
+    component: CarouselComponent,
+    data: {
+      title: 'Carousel'
+    }
+  },
 ];
 
 @NgModule({
