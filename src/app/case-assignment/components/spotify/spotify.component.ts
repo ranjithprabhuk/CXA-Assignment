@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CaseAssignmentService } from '../../case-assignment.service';
+import { CsvService } from '../../../shared/service/csv.service';
 
 @Component({
     templateUrl: 'spotify.component.html',
@@ -10,14 +11,17 @@ export class SpotifyComponent implements OnInit {
     public imagePerApiCall: Number = 30;
     public pageNo: any = 1;
 
-    constructor(private _caseAssignmentService: CaseAssignmentService) { }
+    constructor(
+        private _caseAssignmentService: CaseAssignmentService,
+        private _csvService: CsvService,
+    ) { }
 
     // get the list of images to load
     public getImageList(): void {
         this._caseAssignmentService.getRecentImages(this.imagePerApiCall, this.pageNo).then((response) => {
             if (response && response.photos) {
                 const { photo } = response.photos;
-                // this.imageList = photo && photo.length > 0 ? photo : [];
+                this.imageList = photo && photo.length > 0 ? photo : [];
             }
         })
     }
@@ -44,6 +48,12 @@ export class SpotifyComponent implements OnInit {
         })
     }
 
+    // export the json data as csv
+    public exportToCsv(): void {
+        this._csvService.download(this.imageList, 'imageData');
+    }
+
+    // on component initial loading
     ngOnInit() {
         this.getImageList();
     }

@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app.routing';
 
 // services
 import { ApiService } from './app.service';
+import { CsvService } from './shared/service/csv.service';
 
 // Components
 import { LayoutComponent } from './layouts';
@@ -48,7 +49,7 @@ import { LoaderComponent, LoaderService } from './shared/loader';
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  }, ApiService, LoaderService],
+  }, ApiService, LoaderService, CsvService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
