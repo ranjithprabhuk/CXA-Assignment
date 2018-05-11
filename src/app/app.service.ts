@@ -24,9 +24,14 @@ export class ApiService {
 
     // for successfull API response
     private handleSuccess(response: any): Promise<any> {
-        this.notification.success('Data Fetched Succesfully!');
-        return Promise.resolve(response['_body'] || '');
+        const result = response['_body'];
+        if (result && result.stat === 'ok') {
+            this.notification.success('Images Fetched Succesfully!');
+        } else if(result) {
+            this.notification.error(result.message);
+        }
 
+        return Promise.resolve(result);
     }
 
     // for error handling
