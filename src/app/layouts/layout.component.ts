@@ -23,7 +23,7 @@ export class LayoutComponent {
     {
       title: 'Auto Complete',
       url: '/case-assignment/auto-complete',
-      icon: 'image'
+      icon: 'align-justify'
     }
   ];
 
