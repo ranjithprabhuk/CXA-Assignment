@@ -13,7 +13,7 @@ export class CaseAssignmentService {
     getRecentImages(per_page: Number, page: Number): Promise<any> {
         const url = `&per_page=${per_page}&page=${page}`;
         return this.apiService.get(url)
-            .then(res => { return Promise.resolve(JSON.parse(res))})
+            .then(res => { return Promise.resolve(res)})
             .catch(err => { return Promise.reject(err)});
     }
 
@@ -22,7 +22,7 @@ export class CaseAssignmentService {
         // tslint:disable-next-line
         const url = `&text=${searchText}&per_page=${per_page}&page=${page}`;
         return this.apiService.get(url)
-            .then(res => { return Promise.resolve(JSON.parse(res))})
+            .then(res => { return Promise.resolve(res)})
             .catch(err => { return Promise.reject(err)});
     }
 }
