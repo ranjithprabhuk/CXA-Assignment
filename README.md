@@ -1,22 +1,22 @@
-# Item Selector
+# CXA - Case Assignment
 
-Simple item selector application
+Angular application with flicker image loader, Carousel and Auto Complete Inputs box.
 
 ## DEMO
 
-   You can see the application in the following url : [Item-Selector](https://ranjithprabhuk.github.io/Item-Selector/dist/)
+   You can see the application in the following url : [CXA-Case Assignment](https://ranjithprabhuk.github.io/CXA-Assignment/dist/)
 
 
 ## Installation
 
-1. A recommended way to install ***Item-Selector*** is through [npm](https://www.npmjs.com/) package manager using the following command:
+1. A recommended way to install the application is through [npm](https://www.npmjs.com/) package manager using the following command:
 
 	  ```
-	  npm install 
+	  npm install
 	  ```
 
   It will install all the packages from the npm repository.
-  
+
 2. Use the following command to run the application
 
 	```
