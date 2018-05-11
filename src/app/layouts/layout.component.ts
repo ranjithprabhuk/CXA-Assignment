@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { navigationSettings } from './navigation.settings';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,23 +10,7 @@ export class LayoutComponent {
 
   public disabled = false;
   public status: {isopen: boolean} = {isopen: false};
-  public navigationContent: any[] = [
-    {
-      title: 'Spotify',
-      url: '/case-assignment/spotify',
-      icon: 'search'
-    },
-    {
-      title: 'Carousel',
-      url: '/case-assignment/carousel',
-      icon: 'image'
-    },
-    {
-      title: 'Auto Complete',
-      url: '/case-assignment/auto-complete',
-      icon: 'align-justify'
-    }
-  ];
+  public navigationContent: any[] = navigationSettings;
 
   public toggled(open: boolean): void {
     console.log('Dropdown is now: ', open);
