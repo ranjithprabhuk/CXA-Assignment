@@ -24,7 +24,7 @@ Angular application with flicker image loader, Carousel and Auto Complete Inputs
 	```
 
 
-3. Item selector application will accessible in http://localhost:4200/
+3. Application will accessible in http://localhost:4200/
 
 
 ## Documentation
