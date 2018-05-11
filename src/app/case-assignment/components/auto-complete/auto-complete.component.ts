@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CaseAssignmentService } from '../../case-assignment.service';
+import {FormControl} from '@angular/forms';
 
 @Component({
     templateUrl: 'auto-complete.component.html',
@@ -7,6 +8,7 @@ import { CaseAssignmentService } from '../../case-assignment.service';
 })
 export class AutoCompleteComponent implements OnInit {
     public imageList: any[] = [];
+    public selectControl = new FormControl();
     public selectedValue: any;
     public imagePerApiCall: Number = 30;
     public pageNo: any = 1;
@@ -26,7 +28,7 @@ export class AutoCompleteComponent implements OnInit {
     }
 
     // create the image url
-    constructImageSource(image: any): String {
+    public constructImageSource(image: any): String {
         const { id, server, farm, secret } = image;
         let url: String = '';
 
@@ -36,15 +38,17 @@ export class AutoCompleteComponent implements OnInit {
         return url
     }
 
-    // reset the values
-    public resetValues(): void {
-        this.pageNo = 0;
-        this.imageList = [];
+    // update the selected value
+    public updateSelectedValue(): void {
+        this.selectControl.valueChanges.subscribe(value => {
+            this.selectedValue = this.imageList.filter(image => image.id === value)[0];
+        });
     }
 
     // on component initial loading
     ngOnInit() {
         this.getImageList();
+        this.updateSelectedValue();
     }
 
 }

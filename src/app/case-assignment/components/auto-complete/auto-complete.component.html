@@ -1,5 +1,17 @@
-<div class="row" *ngIf="imageList.length">
-    <div class="col-lg-6">
-        <ngx-select [items]="imageList" [(ngModel)]="selectedValue"></ngx-select>
+<div class="row justify-content-center" *ngIf="imageList.length">
+    <div class="col-md-8">
+        <ngx-select [items]="imageList" [formControl]="selectControl"></ngx-select>
+    </div>
+</div>
+<div class="row justify-content-center image-container" *ngIf="selectedValue">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body" lazy-load-images>
+                <img [src]="constructImageSource(selectedValue)" />
+            </div>
+            <div class="card-header">
+                <h6>{{selectedValue?.title}}</h6>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -16,6 +16,7 @@ import { AutoCompleteComponent, CustomSelectOptions } from './components/auto-co
   imports: [
     CaseAssignmentRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     LazyLoadImagesModule,
     InfiniteScrollModule,

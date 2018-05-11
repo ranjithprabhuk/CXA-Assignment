@@ -15,8 +15,6 @@ export class ApiService {
 
     // for all GET operations
     get(module: string, parameter?: URLSearchParams): Promise<any> {
-
-        this.loader.loader.emit(true);
         return this.http
             .get(this.apiBase + module, { search: parameter, headers: this.headers })
             .toPromise()
@@ -24,44 +22,12 @@ export class ApiService {
             .catch((err) => { return this.handleError(err) });
     }
 
-    // for all POST operations
-    create(module: string, parameter: any): Promise<any> {
-        this.loader.loader.emit(true);
-        return this.http
-            .post(this.apiBase + module, parameter)
-            .toPromise()
-            .then((res) => { return this.handleSuccess(res) })
-            .catch((err) => { return this.handleError(err) });
-    }
-
-    //  for all UPDATE operations
-    update(module: string, parameter?: any): Promise<any> {
-        this.loader.loader.emit(true);
-        return this.http
-            .put(this.apiBase + module, parameter)
-            .toPromise()
-            .then((res) => { return this.handleSuccess(res) })
-            .catch((err) => { return this.handleError(err) });
-    }
-
-    // for all DELETE operations
-    delete(module: string): Promise<any> {
-        this.loader.loader.emit(true);
-        return this.http.delete(this.apiBase + module)
-            .toPromise()
-            .then((res) => { return this.handleSuccess(res) })
-            .catch((err) => this.handleError(err));
-    }
-
-
     // for successfull API response
     private handleSuccess(response: any): Promise<any> {
-        this.loader.loader.emit(false);
         this.notification.success('Data Fetched Succesfully!');
         return Promise.resolve(response['_body'] || '');
 
     }
-
 
     // for error handling
     public handleError(error: any): Promise<any> {
