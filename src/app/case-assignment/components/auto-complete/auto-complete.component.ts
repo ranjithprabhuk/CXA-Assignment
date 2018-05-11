@@ -3,10 +3,10 @@ import { CaseAssignmentService } from '../../case-assignment.service';
 import { CsvService } from '../../../shared/service/csv.service';
 
 @Component({
-    templateUrl: 'input-selector.component.html',
-    styleUrls: ['input-selector.component.scss'],
+    templateUrl: 'auto-complete.component.html',
+    styleUrls: ['auto-complete.component.scss'],
 })
-export class InputSelectorComponent implements OnInit {
+export class AutoCompleteComponent implements OnInit {
     public imageList: any[] = [];
     public searchText: String = '';
     public imagePerApiCall: Number = 30;

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SpotifyComponent } from './components/spotify';
 import { CarouselComponent } from './components/carousel';
-import { InputSelectorComponent } from './components/input-selector';
+import { AutoCompleteComponent } from './components/auto-complete';
 
 const routes: Routes = [
   {
@@ -24,10 +24,10 @@ const routes: Routes = [
     }
   },
   {
-    path: 'input-selector',
-    component: InputSelectorComponent,
+    path: 'auto-complete',
+    component: AutoCompleteComponent,
     data: {
-      title: 'Input Selector'
+      title: 'Auto Complete'
     }
   },
 ];

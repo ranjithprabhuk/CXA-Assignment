@@ -8,7 +8,7 @@ import { CaseAssignmentRoutingModule } from './case-assignment-routing.module';
 import { CaseAssignmentService } from './case-assignment.service';
 import { SpotifyComponent } from './components/spotify';
 import { CarouselComponent } from './components/carousel';
-import { InputSelectorComponent } from './components/input-selector';
+import { AutoCompleteComponent } from './components/auto-complete';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { InputSelectorComponent } from './components/input-selector';
     InfiniteScrollModule,
     CarouselModule.forRoot()
   ],
-  declarations: [SpotifyComponent, CarouselComponent, InputSelectorComponent],
+  declarations: [SpotifyComponent, CarouselComponent, AutoCompleteComponent],
   providers: [CaseAssignmentService]
 })
 export class CaseAssignmentModule { }

@@ -19,6 +19,11 @@ export class LayoutComponent {
       title: 'Carousel',
       url: '/case-assignment/carousel',
       icon: 'image'
+    },
+    {
+      title: 'Auto Complete',
+      url: '/case-assignment/auto-complete',
+      icon: 'image'
     }
   ];
 
