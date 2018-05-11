@@ -3,10 +3,10 @@ import { CaseAssignmentService } from '../../case-assignment.service';
 import { CsvService } from '../../../shared/service/csv.service';
 
 @Component({
-    templateUrl: 'spotify.component.html',
-    styleUrls: ['spotify.component.scss'],
+    templateUrl: 'input-selector.component.html',
+    styleUrls: ['input-selector.component.scss'],
 })
-export class SpotifyComponent implements OnInit {
+export class InputSelectorComponent implements OnInit {
     public imageList: any[] = [];
     public searchText: String = '';
     public imagePerApiCall: Number = 30;

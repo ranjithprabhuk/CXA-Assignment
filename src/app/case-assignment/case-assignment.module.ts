@@ -8,6 +8,7 @@ import { CaseAssignmentRoutingModule } from './case-assignment-routing.module';
 import { CaseAssignmentService } from './case-assignment.service';
 import { SpotifyComponent } from './components/spotify';
 import { CarouselComponent } from './components/carousel';
+import { InputSelectorComponent } from './components/input-selector';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { CarouselComponent } from './components/carousel';
     InfiniteScrollModule,
     CarouselModule.forRoot()
   ],
-  declarations: [SpotifyComponent, CarouselComponent],
+  declarations: [SpotifyComponent, CarouselComponent, InputSelectorComponent],
   providers: [CaseAssignmentService]
 })
 export class CaseAssignmentModule { }
