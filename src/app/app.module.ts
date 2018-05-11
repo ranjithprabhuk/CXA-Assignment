@@ -24,6 +24,7 @@ import { CsvService } from './shared/service/csv.service';
 // Components
 import { LayoutComponent } from './layouts';
 import { LoaderComponent, LoaderService } from './shared/loader';
+import { AppConfig } from './app.config';
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import { LoaderComponent, LoaderService } from './shared/loader';
     AppRoutingModule,
     HttpModule,
     BsDropdownModule.forRoot(),
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot(AppConfig.toastrConfig),
     ChartsModule,
     BrowserAnimationsModule,
   ],
