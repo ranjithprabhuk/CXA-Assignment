@@ -12,12 +12,12 @@ export class LayoutComponent {
   public navigationContent: any[] = [
     {
       title: 'Spotify',
-      url: '[/case-assignment/spotify]',
+      url: '/case-assignment/spotify',
       icon: 'search'
     },
     {
       title: 'Carousel',
-      url: '[/case-assignment/carousel]',
+      url: '/case-assignment/carousel',
       icon: 'image'
     }
   ];

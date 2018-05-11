@@ -4,8 +4,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap/tabs';
+import { BsDropdownModule } from 'ngx-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NAV_DROPDOWN_DIRECTIVES } from './shared/nav-dropdown.directive';
@@ -32,7 +31,6 @@ import { LoaderComponent, LoaderService } from './shared/loader';
     AppRoutingModule,
     HttpModule,
     BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
     ToastrModule.forRoot(),
     ChartsModule,
     BrowserAnimationsModule,
